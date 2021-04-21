@@ -1,0 +1,523 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="羽殇の醉月" href="https://lt12581.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="羽殇の醉月" href="https://lt12581.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="羽殇の醉月" href="https://lt12581.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="转载,基础知识,HTML" />
+
+
+<link rel="canonical" href="https://lt12581.github.io/posts/42620/">
+
+
+
+  <title>
+09-HTML5举例：简单的视频播放器 - HTML知识 |
+Yume Shoka = 羽殇の醉月 = 羽殇の醉月</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">09-HTML5举例：简单的视频播放器
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-04-21 10:30:58">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-04-21T10:30:58+08:00">2021-04-21</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/ChaiPersonalblog/blogImg/main/243971.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/HTML%E7%9F%A5%E8%AF%86/" itemprop="item" rel="index" title="分类于 HTML知识"><span itemprop="name">HTML知识</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://lt12581.github.io/posts/42620/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="羽殇の醉月">
+    <meta itemprop="description" content="羽殇の醉月, 不是只会写业务代码的前端攻城狮！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="羽殇の醉月">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>我们采用 Bootstrap 网站的图标字体，作为播放器的按钮图标。</p>
+<p>index.html 的代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入字体图标的文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/font-awesome.min.css"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="comment">/*多媒体标题*/</span></span></span><br><span class="line">        figcaption&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 150px;</span><br><span class="line">            font-family: "Microsoft Yahei";</span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:24px</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="comment">/* 播放器*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.palyer</span>&#123;</span></span><br><span class="line">            width: 720px;</span><br><span class="line">            height: 360px;</span><br><span class="line"><span class="css">            <span class="selector-tag">margin</span><span class="selector-pseudo">:10px</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line">            background: url(images/loading.gif) center no-repeat #000;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-size</span><span class="selector-pseudo">:auto</span> 100%;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            border-radius: 20px;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.palyer</span> <span class="selector-tag">video</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line">            display: block;</span><br><span class="line"><span class="css">            <span class="selector-tag">margin</span><span class="selector-pseudo">:0</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line"><span class="css">            <span class="comment">/*display: none;*/</span></span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="comment">/* 控制条*/</span></span></span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.controls</span>&#123;</span></span><br><span class="line">            width: 700px;</span><br><span class="line"><span class="css">            <span class="selector-tag">height</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(255, 255, 0, 0<span class="selector-class">.3</span>);</span></span><br><span class="line">            position: absolute;</span><br><span class="line"><span class="css">            <span class="selector-tag">bottom</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">left</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line">            border-radius: 10px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="comment">/*开关*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.switch</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">left</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"></span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span><span class="selector-pseudo">:yellow</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="comment">/*进度条*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.progress</span>&#123;</span></span><br><span class="line">            width: 432px;</span><br><span class="line">            height: 10px;</span><br><span class="line">            position: absolute;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(255,255,255,0<span class="selector-class">.4</span>);</span></span><br><span class="line"><span class="css">            <span class="selector-tag">left</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span><span class="selector-pseudo">:15px</span>;</span></span><br><span class="line">            border-radius: 4px;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="comment">/* 当前进度*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.curr-progress</span>&#123;</span></span><br><span class="line">            width: 50%;</span><br><span class="line">            height: 10px;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="comment">/* 时间模块*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.time</span>&#123;</span></span><br><span class="line">            width: 120px;</span><br><span class="line">            height: 20px;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line">            position: absolute;</span><br><span class="line"><span class="css">            <span class="selector-tag">left</span><span class="selector-pseudo">:510px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:12px</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="comment">/*全屏*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.extend</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 20px;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-tag">right</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"></span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span><span class="selector-pseudo">:yellow</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多媒体--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--  多媒体标题--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>视频案例<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"palyer"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"video/fun.mp4"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 控制条--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 播放暂停--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"switch  icon-play"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- 当前进度--&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"curr-progress"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 时间--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"time"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"curr-time"</span>&gt;</span>00:00:00<span class="tag">&lt;/<span class="name">span</span>&gt;</span>/<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"total-time"</span>&gt;</span>00:00:00<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 全屏--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"extend  icon-resize-full"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 思路：</span></span></span><br><span class="line">        /*</span><br><span class="line">        * 1、点击按钮 实现播放暂停并且切换图标</span><br><span class="line">        * 2、算出视频的总时显示出出来</span><br><span class="line">        * 3、当视频播放的时候，进度条同步，当前时间同步</span><br><span class="line">        * 4、点击实现全屏</span><br><span class="line">        */</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//        获取需要的标签</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span>  video=<span class="built_in">document</span>.querySelector(<span class="string">'video'</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//          播放按钮</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span>  playBtn=<span class="built_in">document</span>.querySelector(<span class="string">'.switch'</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//          当前进度条</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span>  currProgress=<span class="built_in">document</span>.querySelector(<span class="string">'.curr-progress'</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//          当前时间</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span>  currTime=<span class="built_in">document</span>.querySelector(<span class="string">'.curr-time'</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//          总时间</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span>  totalTime=<span class="built_in">document</span>.querySelector(<span class="string">'.total-time'</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//          全屏</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> extend=<span class="built_in">document</span>.querySelector(<span class="string">'.extend'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> tTime=<span class="number">0</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//         1、点击按钮 实现播放暂停并且切换图标</span></span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">           playBtn.onclick=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//               如果视频播放 就暂停，如果暂停 就播放</span></span></span><br><span class="line">               if(video.paused)&#123;</span><br><span class="line"><span class="actionscript"><span class="comment">//                   播放</span></span></span><br><span class="line">                   video.play();</span><br><span class="line"><span class="actionscript">                   <span class="comment">//切换图标</span></span></span><br><span class="line"><span class="actionscript">                   <span class="keyword">this</span>.classList.remove(<span class="string">'icon-play'</span>);</span></span><br><span class="line"><span class="actionscript">                   <span class="keyword">this</span>.classList.add(<span class="string">'icon-pause'</span>);</span></span><br><span class="line"><span class="actionscript">               &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//                   暂停</span></span></span><br><span class="line">                    video.pause();</span><br><span class="line"><span class="actionscript"><span class="comment">//                   切换图标</span></span></span><br><span class="line"><span class="actionscript">                   <span class="keyword">this</span>.classList.remove(<span class="string">'icon-pause'</span>);</span></span><br><span class="line"><span class="actionscript">                   <span class="keyword">this</span>.classList.add(<span class="string">'icon-play'</span>);&#125;</span></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//        2、算出视频的总时显示出出来</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//        当时加载完成后的事件，视频能播放的时候</span></span></span><br><span class="line"><span class="actionscript">        video.oncanplay=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//             获取视频总时长</span></span></span><br><span class="line">            tTime=video.duration;</span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(tTime);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//          将总秒数 转换成 时分秒的格式：00：00:00</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//            小时</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> h=<span class="built_in">Math</span>.floor(tTime/<span class="number">3600</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            分钟</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> m=<span class="built_in">Math</span>.floor(tTime%<span class="number">3600</span>/<span class="number">60</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            秒</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> s=<span class="built_in">Math</span>.floor(tTime%<span class="number">60</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//            console.log(h);</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//            console.log(m);</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//            console.log(s);</span></span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//            把数据格式转成 00:00：00</span></span></span><br><span class="line"><span class="actionscript">            h=h&gt;=<span class="number">10</span>?h:<span class="string">"0"</span>+h;</span></span><br><span class="line"><span class="actionscript">            m=m&gt;=<span class="number">10</span>?m:<span class="string">"0"</span>+m;</span></span><br><span class="line"><span class="actionscript">            s=s&gt;=<span class="number">10</span>?s:<span class="string">"0"</span>+s;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(h);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(m);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(s);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            显示出来</span></span></span><br><span class="line"><span class="actionscript">            totalTime.innerHTML=h+<span class="string">":"</span>+m+<span class="string">":"</span>+s;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript"><span class="comment">//   * 3、当视频播放的时候，进度条同步，当前时间同步</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//         当时当前时间更新的时候触发</span></span></span><br><span class="line"><span class="actionscript">        video.ontimeupdate=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            获取视频当前播放的时间</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//           console.log(video.currentTime);</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">//            当前播放时间</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> cTime=video.currentTime;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//           把格式转成00:00:00</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> h=<span class="built_in">Math</span>.floor(cTime/<span class="number">3600</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            分钟</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> m=<span class="built_in">Math</span>.floor(cTime%<span class="number">3600</span>/<span class="number">60</span>);</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            秒</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> s=<span class="built_in">Math</span>.floor(cTime%<span class="number">60</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//            把数据格式转成 00:00：00</span></span></span><br><span class="line"><span class="actionscript">            h=h&gt;=<span class="number">10</span>?h:<span class="string">"0"</span>+h;</span></span><br><span class="line"><span class="actionscript">            m=m&gt;=<span class="number">10</span>?m:<span class="string">"0"</span>+m;</span></span><br><span class="line"><span class="actionscript">            s=s&gt;=<span class="number">10</span>?s:<span class="string">"0"</span>+s;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//            显示出当前时间</span></span></span><br><span class="line"><span class="actionscript">            currTime.innerHTML=h+<span class="string">":"</span>+m+<span class="string">":"</span>+s;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//            改变进度条的宽度： 当前时间/总时间</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> value=cTime/tTime;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            currProgress.style.width=value*<span class="number">100</span>+<span class="string">"%"</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//        全屏</span></span></span><br><span class="line"><span class="actionscript">        extend.onclick=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//            全屏的h5代码</span></span></span><br><span class="line">            video.webkitRequestFullScreen();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>工程文件：</p>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTBSSExRSU1sMUVLdkZheHZZaEhhUnc=">2018-02-23-H5 多媒体播放器.rar</span></p>
+</li>
+<li>
+<p>密码：88cy</p>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="ic i-tag"></i> 转载</a>
+          <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="ic i-tag"></i> 基础知识</a>
+          <a href="/tags/HTML/" rel="tag"><i class="ic i-tag"></i> HTML</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-04-20 15:10:38" itemprop="dateModified" datetime="2021-04-20T15:10:38+08:00">2021-04-20</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>羽殇の醉月 <i class="ic i-at"><em>@</em></i>羽殇の醉月
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://lt12581.github.io/posts/42620/" title="09-HTML5举例：简单的视频播放器">https://lt12581.github.io/posts/42620/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/posts/8556/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;167699.webp" title="08-HTML5详解">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>08-HTML5详解</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/posts/52629/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;247671.jpg" title="10-HTML5详解（二）">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>10-HTML5详解（二）</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/posts/512457/" rel="bookmark" title="认识Web和Web标准">认识Web和Web标准</a></li><li><a href="/posts/12547/" rel="bookmark" title="浏览器的介绍">浏览器的介绍</a></li><li><a href="/posts/53954211/" rel="bookmark" title="初识HTML">初识HTML</a></li><li><a href="/posts/7054/" rel="bookmark" title="04-HTML标签：排版标签">04-HTML标签：排版标签</a></li><li><a href="/posts/38260/" rel="bookmark" title="05-HTML标签：字体标签和超链接">05-HTML标签：字体标签和超链接</a></li><li><a href="/posts/782/" rel="bookmark" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></li><li><a href="/posts/31785/" rel="bookmark" title="07-html标签图文详解（二）">07-html标签图文详解（二）</a></li><li><a href="/posts/8556/" rel="bookmark" title="08-HTML5详解">08-HTML5详解</a></li><li class="active"><a href="/posts/42620/" rel="bookmark" title="09-HTML5举例：简单的视频播放器">09-HTML5举例：简单的视频播放器</a></li><li><a href="/posts/52629/" rel="bookmark" title="10-HTML5详解（二）">10-HTML5详解（二）</a></li><li><a href="/posts/3388/" rel="bookmark" title="11-HTML5详解（三）">11-HTML5详解（三）</a></li><li><a href="/posts/4132/" rel="bookmark" title="12-HTML基础回顾">12-HTML基础回顾</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="羽殇の醉月"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">羽殇の醉月</p>
+  <div class="description" itemprop="description">不是只会写业务代码的前端攻城狮！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x0MTI1ODE=" title="https:&#x2F;&#x2F;github.com&#x2F;lt12581"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9saWFuZy10b25nLTEwLTQ=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;liang-tong-10-4"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTY5MzMwMTEx" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;69330111"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS81ODgxMTc4OTQ3" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5881178947"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/talk/" rel="section"><i class="ic i-feather"></i>微语</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/music/" rel="section"><i class="ic i-music"></i>音乐</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/posts/8556/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/posts/52629/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/31785/" title="07-html标签图文详解（二）">07-html标签图文详解（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分类于 blog">blog</a>
+</div>
+
+    <span><a href="/posts/520520/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/1860/" title="VS Code的使用积累">VS Code的使用积累</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/782/" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/38260/" title="05-HTML标签：字体标签和超链接">05-HTML标签：字体标签和超链接</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/53547/" title="Git的使用">Git的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/8556/" title="08-HTML5详解">08-HTML5详解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/26789/" title="VS Code的使用">VS Code的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/52629/" title="10-HTML5详解（二）">10-HTML5详解（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/59344/" title="GitHub的使用">GitHub的使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">羽殇の醉月 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'posts/42620/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":120,"height":260},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -1,0 +1,670 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="羽殇の醉月" href="https://lt12581.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="羽殇の醉月" href="https://lt12581.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="羽殇の醉月" href="https://lt12581.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="转载,前端工具" />
+
+
+<link rel="canonical" href="https://lt12581.github.io/posts/1860/">
+
+
+
+  <title>
+VS Code的使用积累 - 前端工具 |
+Yume Shoka = 羽殇の醉月 = 羽殇の醉月</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">VS Code的使用积累
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-04-21 10:30:58">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-04-21T10:30:58+08:00">2021-04-21</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/ChaiPersonalblog/blogImg/main/vscode_logo.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" itemprop="item" rel="index" title="分类于 前端工具"><span itemprop="name">前端工具</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://lt12581.github.io/posts/1860/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="羽殇の醉月">
+    <meta itemprop="description" content="羽殇の醉月, 不是只会写业务代码的前端攻城狮！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="羽殇の醉月">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="常见配置"><a class="markdownIt-Anchor" href="#常见配置">#</a> 常见配置</h2>
+<p><strong>自动保存</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;files.autoSave&quot;: &quot;onFocusChange&quot;</span><br></pre></td></tr></table></figure>
+<p>参考链接：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dlc3RMb25seS9hcnRpY2xlL2RldGFpbHMvNzgwNDgwNDk=">https://blog.csdn.net/WestLonly/article/details/78048049</span></p>
+<p><strong>在新的窗口中打开文件</strong>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"workbench.editor.enablePreview": false,</span><br></pre></td></tr></table></figure>
+<h2 id="常见操作"><a class="markdownIt-Anchor" href="#常见操作">#</a> 常见操作</h2>
+<h3 id="如何查看代码结构"><a class="markdownIt-Anchor" href="#如何查看代码结构">#</a> 如何查看代码结构</h3>
+<ul>
+<li>
+<p>方法一：「Cmd + Shift + O」</p>
+</li>
+<li>
+<p>方法二：安装插件 <code>Code Outline</code></p>
+</li>
+</ul>
+<p>参考链接：<span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzI2NDA0NTA5NA==">https://www.zhihu.com/question/264045094</span></p>
+<h3 id="在本地开启服务器"><a class="markdownIt-Anchor" href="#在本地开启服务器">#</a> 在本地开启服务器</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">npm install -g live-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">live-server</span><br></pre></td></tr></table></figure>
+<p>参考链接：<span class="exturl" data-url="aHR0cDovL3d3dy5jbmJsb2dzLmNvbS8xemhrL3AvNTY5OTM3OS5odG1s">Visual Studio Code + live-server 编辑和浏览 HTML 网页</span></p>
+<h2 id="常用插件"><a class="markdownIt-Anchor" href="#常用插件">#</a> 常用插件</h2>
+<p>方式一：打开 VS Code，左侧有五个按钮，点击最下方的按钮，然后就可以开始安装相应的插件了。</p>
+<p>方式二：在 vscode 中输入快捷键「ctrl+shift+P」，弹出指令窗口，输入 <code>extension:install</code> ，回车，左侧即打开扩展安装的界面。</p>
+<h3 id="sftp文件传输"><a class="markdownIt-Anchor" href="#sftp文件传输">#</a> sftp：文件传输</h3>
+<p>输入快捷键「ctrl+shift+P」，弹出指令窗口，输入 <code>sftp:config</code> ，回车，当前工作工程的 <code>.vscode</code>  文件夹下就会自动生成一个 <code>sftp.json</code>  文件，我们需要在这个文件里配置的是：</p>
+<ul>
+<li>
+<p><code>host</code> ：服务器的 IP 地址</p>
+</li>
+<li>
+<p><code>username</code> ：工作站自己的用户名</p>
+</li>
+<li>
+<p><code>privateKeyPath</code> ：存放在本地的已配置好的用于登录工作站的密钥文件（也可以是 ppk 文件）</p>
+</li>
+<li>
+<p><code>remotePath</code> ：工作站上与本地工程同步的文件夹路径，需要和本地工程文件根目录同名，且在使用 sftp 上传文件之前，要手动在工作站上 mkdir 生成这个根目录</p>
+</li>
+<li>
+<p><code>ignore</code> ：指定在使用 sftp: sync to remote 的时候忽略的文件及文件夹，注意每一行后面有逗号，最后一行没有逗号</p>
+</li>
+</ul>
+<p>举例如下：(注意，其中的注释不能保留)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">""</span>,     <span class="comment">//服务器ip</span></span><br><span class="line">    <span class="attr">"port"</span>: <span class="number">22</span>,     <span class="comment">//端口，sftp模式是22</span></span><br><span class="line">    <span class="attr">"username"</span>: <span class="string">""</span>, <span class="comment">//用户名</span></span><br><span class="line">    <span class="attr">"password"</span>: <span class="string">""</span>, <span class="comment">//密码</span></span><br><span class="line">    <span class="attr">"protocol"</span>: <span class="string">"sftp"</span>, <span class="comment">//模式</span></span><br><span class="line">    <span class="attr">"agent"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"privateKeyPath"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"passphrase"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"passive"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"interactiveAuth"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"remotePath"</span>: <span class="string">"/root/node/build/"</span>,  <span class="comment">//服务器上的文件地址</span></span><br><span class="line">    <span class="attr">"context"</span>: <span class="string">"./server/build"</span>,        <span class="comment">//本地的文件地址</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">"uploadOnSave"</span>: <span class="literal">true</span>,   <span class="comment">//监听保存并上传</span></span><br><span class="line">    <span class="attr">"syncMode"</span>: <span class="string">"update"</span>,</span><br><span class="line">    <span class="attr">"watcher"</span>: &#123;            <span class="comment">//监听外部文件</span></span><br><span class="line">        <span class="attr">"files"</span>: <span class="literal">false</span>,     <span class="comment">//外部文件的绝对路径</span></span><br><span class="line">        <span class="attr">"autoUpload"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"autoDelete"</span>: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"ignore"</span>: [             <span class="comment">//忽略项</span></span><br><span class="line">        <span class="string">"**/.vscode/**"</span>,</span><br><span class="line">        <span class="string">"**/.git/**"</span>,</span><br><span class="line">        <span class="string">"**/.DS_Store"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="sass-formatter"><a class="markdownIt-Anchor" href="#sass-formatter">#</a> Sass Formatter</h3>
+<p>Sass 文件格式化。</p>
+<h3 id="code-outline显示代码结构"><a class="markdownIt-Anchor" href="#code-outline显示代码结构">#</a> Code Outline：显示代码结构</h3>
+<p>安装好插件「Code Outline」后，可以在左侧的资源管理器中，显示当前文件的代码结构：</p>
+<p><img data-src="http://img.smyhvae.com/20180420_0925.png" alt=""></p>
+<p>参考链接：</p>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzUwMjczNDUw">https://www.zhihu.com/question/50273450</span></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cDovL2l0b3BpYy5vcmcvdnNjb2RlLmh0bWw=">http://itopic.org/vscode.html</span></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3ZhckhhcnJpZS92YXJoYXJyaWUuZ2l0aHViLmlvL2lzc3Vlcy8xMA==">https://github.com/varHarrie/varharrie.github.io/issues/10</span></p>
+</li>
+</ul>
+<h3 id="vscode-fileheader添加顶部注释模板签名"><a class="markdownIt-Anchor" href="#vscode-fileheader添加顶部注释模板签名">#</a> vscode-fileheader：添加顶部注释模板 (签名)</h3>
+<p>（1）安装插件 vscode -fileheader，并重启。</p>
+<p>（2）在首选项 -》设置 -》中搜索 fileheader，找到头部模板修改。</p>
+<p>默认的快捷键是：「Ctrl + option + I」。</p>
+<p>参考链接：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzYyMzg1NjQ3">https://www.zhihu.com/question/62385647</span></li>
+</ul>
+<h3 id="express"><a class="markdownIt-Anchor" href="#express">#</a> Express</h3>
+<p>在本地开启 Node 服务器：</p>
+<p><img data-src="http://img.smyhvae.com/20180611_2230.png" alt=""></p>
+<p>然后在浏览器的地址栏输入 <code>http://localhost/</code>  + 文件的相对路径，就可以通过服务器的形式打开这个文件。</p>
+<h3 id="copy-relative-path"><a class="markdownIt-Anchor" href="#copy-relative-path">#</a> Copy Relative Path</h3>
+<blockquote>
+<p>这个插件很有用，使用频率很高。</p>
+</blockquote>
+<p>复制文件的相对路径：（相对于根路径而言）</p>
+<p><img data-src="http://img.smyhvae.com/20180611_2235.png" alt=""></p>
+<h3 id="open-in-browser"><a class="markdownIt-Anchor" href="#open-in-browser">#</a> open in browser</h3>
+<p>在浏览器中打开。</p>
+<h3 id="auto-rename-tag"><a class="markdownIt-Anchor" href="#auto-rename-tag">#</a> Auto Rename Tag</h3>
+<p>适用于 JSX、Vue、HTML。在修改标签名时，能在你修改开始（结束）标签的时候修改对应的结束（开始）标签，帮你减少 50% 的击键。</p>
+<p>###Project Manager</p>
+<p>项目管理，让我们方便的在命令面板中切换项目文件夹，当然，你也可以直接打开包含多个项目的父级文件夹，但这样可能会让 VSCode 变慢。</p>
+<h3 id="highlight-icemode选中相同的代码时让高亮显示更加明显荐"><a class="markdownIt-Anchor" href="#highlight-icemode选中相同的代码时让高亮显示更加明显荐">#</a> highlight-icemode：选中相同的代码时，让高亮显示更加明显【荐】</h3>
+<p>VSCode 自带的高亮显示，实在是不够显眼。用插件支持一下吧。</p>
+<p>所用了这个插件之后，VS Code 自带的高亮就可以关掉了：</p>
+<p>在用户设置里添加 <code>&quot;editor.selectionHighlight&quot;: false</code>  即可。</p>
+<p>参考链接：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BhbG1lcl9rYWkvYXJ0aWNsZS9kZXRhaWxzLzc5NTQ4MTY0">vscode 选中后相同内容高亮插件推荐</span></p>
+<h3 id="highlight-words全局高亮跨文件多色彩"><a class="markdownIt-Anchor" href="#highlight-words全局高亮跨文件多色彩">#</a> highlight-words：全局高亮（跨文件多色彩）</h3>
+<p>参考链接：<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMTE2Mzc5Mw==">Visual Studio Code 全局高亮着色插件 (跨文件多色彩) 经验纪要</span></p>
+<h3 id="color-exchange颜色格式转换荐"><a class="markdownIt-Anchor" href="#color-exchange颜色格式转换荐">#</a> color-exchange：颜色格式转换【荐】</h3>
+<p>安装完插件后，在 css 中输入颜色，然后按 <code>cmd + .</code> ，就能进行颜色的格式转换。</p>
+<p>20181013_1450.png</p>
+<p>我在写这一段时，安装的人还不多，赶紧上车。</p>
+<h2 id="vue-相关的插件"><a class="markdownIt-Anchor" href="#vue-相关的插件">#</a> Vue 相关的插件</h2>
+<h3 id="veturvue-文件的基本语法高亮"><a class="markdownIt-Anchor" href="#veturvue-文件的基本语法高亮">#</a> vetur：vue 文件的基本语法高亮</h3>
+<p>安装完 vetur 后还需要加上这样一段配置下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;emmet.syntaxProfiles&quot;: &#123;</span><br><span class="line">  &quot;vue-html&quot;: &quot;html&quot;,</span><br><span class="line">  &quot;vue&quot;: &quot;html&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考链接：</p>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2xhcmVuY2VwLmNvbS8yMDE3LzAzLzE4L2VkaXQtdnVlLWZpbGUtdmlhLXZzY29kZS8=">https://www.clarencep.com/2017/03/18/edit-vue-file-via-vscode/</span></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3ZhckhhcnJpZS92YXJoYXJyaWUuZ2l0aHViLmlvL2lzc3Vlcy8xMA==">https://github.com/varHarrie/varharrie.github.io/issues/10</span></p>
+</li>
+</ul>
+<h3 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接">#</a> 参考链接</h3>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8wNzI0OTIxMjg1ZDQ=">https://www.jianshu.com/p/0724921285d4</span></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vQW1vc0xlZTk0L3AvODMzODAxMy5odG1s">https://www.cnblogs.com/AmosLee94/p/8338013.html</span></p>
+</li>
+</ul>
+<h2 id="常用快捷键"><a class="markdownIt-Anchor" href="#常用快捷键">#</a> 常用快捷键</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Win 快捷键</th>
+<th style="text-align:left">Mac 快捷键</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Shift + Alt + F</td>
+<td style="text-align:left">Shift + option + F</td>
+<td style="text-align:left">代码格式化</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl + Shift + N</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">在当前行上面增加一行并跳至该行</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ctrl + Shift + D</strong></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">复制当前行到下一行</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="如何同时打开多个窗口"><a class="markdownIt-Anchor" href="#如何同时打开多个窗口">#</a> 如何同时打开多个窗口</h3>
+<h2 id="问题"><a class="markdownIt-Anchor" href="#问题">#</a> 问题</h2>
+<p>问题 1</p>
+<p>解决；You can kill the Microsoft.VSCode.Cpp.IntelliSense.Msvc process to save the file successfully. 也就是 IntelliSense 这个进程。</p>
+<h2 id="参考链接-2"><a class="markdownIt-Anchor" href="#参考链接-2">#</a> 参考链接</h2>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMDk3NjU4NA==">能让你开发效率翻倍的 VSCode 插件配置（上）</span></li>
+</ul>
+<h3 id="某网友的vs-code-插件截图"><a class="markdownIt-Anchor" href="#某网友的vs-code-插件截图">#</a> 某网友的 VS Code 插件截图</h3>
+<p><img data-src="http://img.smyhvae.com/20180611_2255.png" alt=""></p>
+
+      <div class="tags">
+          <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="ic i-tag"></i> 转载</a>
+          <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> 前端工具</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-04-20 14:03:54" itemprop="dateModified" datetime="2021-04-20T14:03:54+08:00">2021-04-20</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>羽殇の醉月 <i class="ic i-at"><em>@</em></i>羽殇の醉月
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://lt12581.github.io/posts/1860/" title="VS Code的使用积累">https://lt12581.github.io/posts/1860/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/posts/47531/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;iTerm2_logo.jpg" title="Mac安装和配置iTerm2">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 前端工具</span>
+  <h3>Mac安装和配置iTerm2</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/posts/53954211/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;HTML_logo.jpg" title="初识HTML">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>初识HTML</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见配置"><span class="toc-number">1.</span> <span class="toc-text"> 常见配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见操作"><span class="toc-number">2.</span> <span class="toc-text"> 常见操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何查看代码结构"><span class="toc-number">2.1.</span> <span class="toc-text"> 如何查看代码结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在本地开启服务器"><span class="toc-number">2.2.</span> <span class="toc-text"> 在本地开启服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用插件"><span class="toc-number">3.</span> <span class="toc-text"> 常用插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sftp文件传输"><span class="toc-number">3.1.</span> <span class="toc-text"> sftp：文件传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sass-formatter"><span class="toc-number">3.2.</span> <span class="toc-text"> Sass Formatter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-outline显示代码结构"><span class="toc-number">3.3.</span> <span class="toc-text"> Code Outline：显示代码结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vscode-fileheader添加顶部注释模板签名"><span class="toc-number">3.4.</span> <span class="toc-text"> vscode-fileheader：添加顶部注释模板 (签名)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express"><span class="toc-number">3.5.</span> <span class="toc-text"> Express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#copy-relative-path"><span class="toc-number">3.6.</span> <span class="toc-text"> Copy Relative Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#open-in-browser"><span class="toc-number">3.7.</span> <span class="toc-text"> open in browser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#auto-rename-tag"><span class="toc-number">3.8.</span> <span class="toc-text"> Auto Rename Tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#highlight-icemode选中相同的代码时让高亮显示更加明显荐"><span class="toc-number">3.9.</span> <span class="toc-text"> highlight-icemode：选中相同的代码时，让高亮显示更加明显【荐】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#highlight-words全局高亮跨文件多色彩"><span class="toc-number">3.10.</span> <span class="toc-text"> highlight-words：全局高亮（跨文件多色彩）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#color-exchange颜色格式转换荐"><span class="toc-number">3.11.</span> <span class="toc-text"> color-exchange：颜色格式转换【荐】</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-相关的插件"><span class="toc-number">4.</span> <span class="toc-text"> Vue 相关的插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#veturvue-文件的基本语法高亮"><span class="toc-number">4.1.</span> <span class="toc-text"> vetur：vue 文件的基本语法高亮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">4.2.</span> <span class="toc-text"> 参考链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用快捷键"><span class="toc-number">5.</span> <span class="toc-text"> 常用快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何同时打开多个窗口"><span class="toc-number">5.1.</span> <span class="toc-text"> 如何同时打开多个窗口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">6.</span> <span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-2"><span class="toc-number">7.</span> <span class="toc-text"> 参考链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#某网友的vs-code-插件截图"><span class="toc-number">7.1.</span> <span class="toc-text"> 某网友的 VS Code 插件截图</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/posts/26789/" rel="bookmark" title="VS Code的使用">VS Code的使用</a></li><li><a href="/posts/53547/" rel="bookmark" title="Git的使用">Git的使用</a></li><li><a href="/posts/47531/" rel="bookmark" title="Mac安装和配置iTerm2">Mac安装和配置iTerm2</a></li><li class="active"><a href="/posts/1860/" rel="bookmark" title="VS Code的使用积累">VS Code的使用积累</a></li><li><a href="/posts/5251/" rel="bookmark" title="WebStorm的使用">WebStorm的使用</a></li><li><a href="/posts/59344/" rel="bookmark" title="GitHub的使用">GitHub的使用</a></li><li><a href="/posts/10161/" rel="bookmark" title="chrome浏览器">chrome浏览器</a></li><li><a href="/posts/42207/" rel="bookmark" title="whistle网络抓包">whistle网络抓包</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="羽殇の醉月"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">羽殇の醉月</p>
+  <div class="description" itemprop="description">不是只会写业务代码的前端攻城狮！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x0MTI1ODE=" title="https:&#x2F;&#x2F;github.com&#x2F;lt12581"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9saWFuZy10b25nLTEwLTQ=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;liang-tong-10-4"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTY5MzMwMTEx" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;69330111"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS81ODgxMTc4OTQ3" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5881178947"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/talk/" rel="section"><i class="ic i-feather"></i>微语</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/music/" rel="section"><i class="ic i-music"></i>音乐</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/posts/47531/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/posts/53954211/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分类于 blog">blog</a>
+</div>
+
+    <span><a href="/posts/520520/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/26789/" title="VS Code的使用">VS Code的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/12547/" title="浏览器的介绍">浏览器的介绍</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/38260/" title="05-HTML标签：字体标签和超链接">05-HTML标签：字体标签和超链接</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/1860/" title="VS Code的使用积累">VS Code的使用积累</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/42207/" title="whistle网络抓包">whistle网络抓包</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/782/" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/5251/" title="WebStorm的使用">WebStorm的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/52629/" title="10-HTML5详解（二）">10-HTML5详解（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/53547/" title="Git的使用">Git的使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">羽殇の醉月 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'posts/1860/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":120,"height":260},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

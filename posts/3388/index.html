@@ -1,0 +1,601 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="羽殇の醉月" href="https://lt12581.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="羽殇の醉月" href="https://lt12581.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="羽殇の醉月" href="https://lt12581.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="转载,基础知识,HTML" />
+
+
+<link rel="canonical" href="https://lt12581.github.io/posts/3388/">
+
+
+
+  <title>
+11-HTML5详解（三） - HTML知识 |
+Yume Shoka = 羽殇の醉月 = 羽殇の醉月</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">11-HTML5详解（三）
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-04-21 10:30:58">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-04-21T10:30:58+08:00">2021-04-21</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/ChaiPersonalblog/blogImg/main/289586.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/HTML%E7%9F%A5%E8%AF%86/" itemprop="item" rel="index" title="分类于 HTML知识"><span itemprop="name">HTML知识</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://lt12581.github.io/posts/3388/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="羽殇の醉月">
+    <meta itemprop="description" content="羽殇の醉月, 不是只会写业务代码的前端攻城狮！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="羽殇の醉月">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="web-存储"><a class="markdownIt-Anchor" href="#web-存储">#</a> Web 存储</h2>
+<p>随着互联网的快速发展，基于网页的应用越来越普遍，同时也变的越来越复杂，为了满足各种各样的需求，会经常性在本地存储大量的数据，传统方式我们以 document.cookie 来进行存储的，但是由于其存储大小只有 4k 左右，并且解析也相当的复杂，给开发带来诸多不便，HTML5 规范则提出解决方案。</p>
+<h3 id="h5-中有两种存储的方式"><a class="markdownIt-Anchor" href="#h5-中有两种存储的方式">#</a> H5 中有两种存储的方式</h3>
+<p>1、<strong> <code>window.sessionStorage</code>  会话存储：</strong></p>
+<ul>
+<li>
+<p>保存在内存中。</p>
+</li>
+<li>
+<p><strong>生命周期</strong>为关闭浏览器窗口。也就是说，当窗口关闭时数据销毁。</p>
+</li>
+<li>
+<p>在同一个窗口下数据可以共享。</p>
+</li>
+</ul>
+<p>2、<strong> <code>window.localStorage</code>  本地存储</strong>：</p>
+<ul>
+<li>
+<p>有可能保存在浏览器内存里，有可能在硬盘里。</p>
+</li>
+<li>
+<p>永久生效，除非手动删除（比如清理垃圾的时候）。</p>
+</li>
+<li>
+<p>可以多窗口共享。</p>
+</li>
+</ul>
+<h3 id="web-存储的特性"><a class="markdownIt-Anchor" href="#web-存储的特性">#</a> Web 存储的特性</h3>
+<p>（1）设置、读取方便。</p>
+<p>（2）容量较大，sessionStorage 约 5M、localStorage 约 20M。</p>
+<p>（3）只能存储字符串，可以将对象 JSON.stringify () 编码后存储。</p>
+<h3 id="常见-api"><a class="markdownIt-Anchor" href="#常见-api">#</a> 常见 API</h3>
+<p>设置存储内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setItem(key, value);</span><br></pre></td></tr></table></figure>
+<p>PS：可以新增一个 item，也可以更新一个 item。</p>
+<p>读取存储内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getItem(key);</span><br></pre></td></tr></table></figure>
+<p>根据键，删除存储内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">removeItem(key);</span><br></pre></td></tr></table></figure>
+<p>清空所有存储内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear();</span><br></pre></td></tr></table></figure>
+<p>根据索引值来获取存储内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key(n);</span><br></pre></td></tr></table></figure>
+<p>sessionStorage 的 API 举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>sesssionStorage存储<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>sesssionStorage获取<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>sesssionStorage更新<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>sesssionStorage删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>sesssionStorage清除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//在h5中提供两种web存储方式</span></span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// sessionStorage  session（会话，会议） 5M  当窗口关闭是数据销毁  内存</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// localStorage    20M 永久生效 ，除非手动删除  清理垃圾  硬盘上</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> txt = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> btns = <span class="built_in">document</span>.querySelectorAll(<span class="string">'button'</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//        sessionStorage存储数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.sessionStorage.setItem(<span class="string">'userName'</span>, txt.value);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.sessionStorage.setItem(<span class="string">'pwd'</span>, <span class="string">'123456'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.sessionStorage.setItem(<span class="string">'age'</span>, <span class="number">18</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        sessionStorage获取数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">1</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        txt.value = <span class="built_in">window</span>.sessionStorage.getItem(<span class="string">'userName'</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        sessionStorage更新数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">2</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.sessionStorage.setItem(<span class="string">'userName'</span>, txt.value);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        sessionStorage删除数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">3</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.sessionStorage.removeItem(<span class="string">'userName'</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        sessionStorage清空数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">4</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.sessionStorage.clear();</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img data-src="http://img.smyhvae.com/20180224_2200.gif" alt=""></p>
+<p>如上图所示，我们可以在 Storage 选项卡中查看 Session Storage 和 Local Storage。</p>
+<p><strong>localStorage 的 API 举例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>localStorage存储<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>localStorage获取<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>localStorage更新<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>localStorage删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>localStorage清除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    *  localStorage</span><br><span class="line">    *  数据存在硬盘上</span><br><span class="line">    *  永久生效</span><br><span class="line">    *  20M</span><br><span class="line">    * */</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> txt = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> btns = <span class="built_in">document</span>.querySelectorAll(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        localStorage存储数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.localStorage.setItem(<span class="string">'userName'</span>, txt.value);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        localStorage存储数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">1</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        txt.value = <span class="built_in">window</span>.localStorage.getItem(<span class="string">'userName'</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        localStorage删除数据</span></span></span><br><span class="line"><span class="actionscript">    btns[<span class="number">3</span>].onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.localStorage.removeItem(<span class="string">'userName'</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="案例记住用户名和密码"><a class="markdownIt-Anchor" href="#案例记住用户名和密码">#</a> 案例：记住用户名和密码</h3>
+<p>代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"userName"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    密 码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"pwd"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"check"</span> <span class="attr">id</span>=<span class="string">""</span>/&gt;</span>记住密码</span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> userName = <span class="built_in">document</span>.querySelector(<span class="string">'.userName'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> pwd = <span class="built_in">document</span>.querySelector(<span class="string">'.pwd'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> chk = <span class="built_in">document</span>.querySelector(<span class="string">'.check'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//        当点击登录的时候 如果勾选“记住密码”，就存储密码；否则就清除密码</span></span></span><br><span class="line"><span class="actionscript">    btn.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">        if (chk.checked) &#123;</span><br><span class="line"><span class="actionscript"><span class="comment">//                记住数据</span></span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.localStorage.setItem(<span class="string">'userName'</span>, userName.value);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.localStorage.setItem(<span class="string">'pwd'</span>, pwd.value);</span></span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript"><span class="comment">//                清除数据</span></span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.localStorage.removeItem(<span class="string">'userName'</span>);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.localStorage.removeItem(<span class="string">'pwd'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="actionscript">    <span class="comment">//        下次登录时，如果记录的有数据，就直接填充</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        userName.value = <span class="built_in">window</span>.localStorage.getItem(<span class="string">'userName'</span>);</span></span><br><span class="line"><span class="javascript">        pwd.value = <span class="built_in">window</span>.localStorage.getItem(<span class="string">'pwd'</span>);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="网络状态"><a class="markdownIt-Anchor" href="#网络状态">#</a> 网络状态</h2>
+<p>我们可以通过  <code>window.onLine</code>  来检测用户当前的网络状况，返回一个布尔值。另外：</p>
+<ul>
+<li>
+<p>window.online：用户网络连接时被调用。</p>
+</li>
+<li>
+<p>window.offline：用户网络断开时被调用（拔掉网线或者禁用以太网）。</p>
+</li>
+</ul>
+<p>网络状态监听的代码举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(<span class="string">'online'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="string">'网络连接建立！'</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(<span class="string">'offline'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="string">'网络连接断开！'</span>);</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="应用缓存"><a class="markdownIt-Anchor" href="#应用缓存">#</a> 应用缓存</h2>
+<p>HTML5 中我们可以轻松的构建一个离线（无网络状态）应用，只需要创建一个  <code>cache manifest</code>  缓存清单文件。</p>
+<h3 id="优势"><a class="markdownIt-Anchor" href="#优势">#</a> 优势</h3>
+<p>1、可配置需要缓存的资源；</p>
+<p>2、网络无连接应用仍可用；</p>
+<p>3、本地读取缓存资源，提升访问速度，增强用户体验；</p>
+<p>4、减少请求，缓解服务器负担。</p>
+<h3 id="cache-manifest-缓存清单文件"><a class="markdownIt-Anchor" href="#cache-manifest-缓存清单文件">#</a>  <code>cache manifest</code>  缓存清单文件</h3>
+<p>缓存清单文件中列出了浏览器应缓存，以供离线访问的资源。推荐使用  <code>.appcache</code>  作为后缀名，另外还要添加 MIME 类型。</p>
+<p><strong>缓存清单文件里的内容怎样写：</strong></p>
+<p>（1）顶行写 CACHE MANIFEST。</p>
+<p>（2）CACHE: 换行 指定我们需要缓存的静态资源，如.css、image、js 等。</p>
+<p>（3）NETWORK: 换行 指定需要在线访问的资源，可使用通配符（也就是：不需要缓存的、必须在网络下面才能访问的资源）。</p>
+<p>（4）FALLBACK: 换行 当被缓存的文件找不到时的备用资源（当访问不到某个资源时，自动由另外一个资源替换）。</p>
+<p>格式举例 1：</p>
+<p><img data-src="http://img.smyhvae.com/20180224_2240.png" alt=""></p>
+<p>格式举例 2：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"></span><br><span class="line"><span class="comment">#要缓存的文件</span></span><br><span class="line">CACHE:</span><br><span class="line">    images/img1.jpg</span><br><span class="line">    images/img2.jpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#指定必须联网才能访问的文件</span></span><br><span class="line">NETWORK:</span><br><span class="line">     images/img3.jpg</span><br><span class="line">     images/img4.jpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#当前页面无法访问是回退的页面</span></span><br><span class="line">FALLBACK:</span><br><span class="line">    404.html</span><br></pre></td></tr></table></figure>
+<p><strong>缓存清单文件怎么用：</strong></p>
+<p>（1）例如我们创建一个名为  <code>demo.appcache</code>  的文件。例如：</p>
+<p>demo.appcache：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注释以#开头</span></span><br><span class="line"><span class="comment">#下面是要缓存的文件</span></span><br><span class="line">CACHE:</span><br><span class="line">    http://img.smyhvae.com/2016040101.jpg</span><br></pre></td></tr></table></figure>
+<p>（2）在需要应用缓存在页面的根元素 (html) 里，添加属性 manifest=“demo.appcache”。路径要保证正确。例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"01.appcache"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://img.smyhvae.com/2016040101.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      <div class="tags">
+          <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="ic i-tag"></i> 转载</a>
+          <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="ic i-tag"></i> 基础知识</a>
+          <a href="/tags/HTML/" rel="tag"><i class="ic i-tag"></i> HTML</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-04-20 15:10:59" itemprop="dateModified" datetime="2021-04-20T15:10:59+08:00">2021-04-20</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>羽殇の醉月 <i class="ic i-at"><em>@</em></i>羽殇の醉月
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://lt12581.github.io/posts/3388/" title="11-HTML5详解（三）">https://lt12581.github.io/posts/3388/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/posts/52629/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;247671.jpg" title="10-HTML5详解（二）">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>10-HTML5详解（二）</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/posts/4132/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;exploress.jpg" title="12-HTML基础回顾">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>12-HTML基础回顾</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web-存储"><span class="toc-number">1.</span> <span class="toc-text"> Web 存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#h5-中有两种存储的方式"><span class="toc-number">1.1.</span> <span class="toc-text"> H5 中有两种存储的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-存储的特性"><span class="toc-number">1.2.</span> <span class="toc-text"> Web 存储的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见-api"><span class="toc-number">1.3.</span> <span class="toc-text"> 常见 API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例记住用户名和密码"><span class="toc-number">1.4.</span> <span class="toc-text"> 案例：记住用户名和密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络状态"><span class="toc-number">2.</span> <span class="toc-text"> 网络状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用缓存"><span class="toc-number">3.</span> <span class="toc-text"> 应用缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优势"><span class="toc-number">3.1.</span> <span class="toc-text"> 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache-manifest-缓存清单文件"><span class="toc-number">3.2.</span> <span class="toc-text">  cache manifest  缓存清单文件</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/posts/512457/" rel="bookmark" title="认识Web和Web标准">认识Web和Web标准</a></li><li><a href="/posts/12547/" rel="bookmark" title="浏览器的介绍">浏览器的介绍</a></li><li><a href="/posts/53954211/" rel="bookmark" title="初识HTML">初识HTML</a></li><li><a href="/posts/7054/" rel="bookmark" title="04-HTML标签：排版标签">04-HTML标签：排版标签</a></li><li><a href="/posts/38260/" rel="bookmark" title="05-HTML标签：字体标签和超链接">05-HTML标签：字体标签和超链接</a></li><li><a href="/posts/782/" rel="bookmark" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></li><li><a href="/posts/31785/" rel="bookmark" title="07-html标签图文详解（二）">07-html标签图文详解（二）</a></li><li><a href="/posts/8556/" rel="bookmark" title="08-HTML5详解">08-HTML5详解</a></li><li><a href="/posts/42620/" rel="bookmark" title="09-HTML5举例：简单的视频播放器">09-HTML5举例：简单的视频播放器</a></li><li><a href="/posts/52629/" rel="bookmark" title="10-HTML5详解（二）">10-HTML5详解（二）</a></li><li class="active"><a href="/posts/3388/" rel="bookmark" title="11-HTML5详解（三）">11-HTML5详解（三）</a></li><li><a href="/posts/4132/" rel="bookmark" title="12-HTML基础回顾">12-HTML基础回顾</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="羽殇の醉月"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">羽殇の醉月</p>
+  <div class="description" itemprop="description">不是只会写业务代码的前端攻城狮！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x0MTI1ODE=" title="https:&#x2F;&#x2F;github.com&#x2F;lt12581"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9saWFuZy10b25nLTEwLTQ=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;liang-tong-10-4"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTY5MzMwMTEx" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;69330111"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS81ODgxMTc4OTQ3" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5881178947"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/talk/" rel="section"><i class="ic i-feather"></i>微语</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/music/" rel="section"><i class="ic i-music"></i>音乐</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/posts/52629/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/posts/4132/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/42207/" title="whistle网络抓包">whistle网络抓包</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/31785/" title="07-html标签图文详解（二）">07-html标签图文详解（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/512457/" title="认识Web和Web标准">认识Web和Web标准</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/5251/" title="WebStorm的使用">WebStorm的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/782/" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/47531/" title="Mac安装和配置iTerm2">Mac安装和配置iTerm2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/53547/" title="Git的使用">Git的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/59344/" title="GitHub的使用">GitHub的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/10161/" title="chrome浏览器">chrome浏览器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/38260/" title="05-HTML标签：字体标签和超链接">05-HTML标签：字体标签和超链接</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">羽殇の醉月 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'posts/3388/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":120,"height":260},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

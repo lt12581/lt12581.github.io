@@ -1,0 +1,749 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="羽殇の醉月" href="https://lt12581.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="羽殇の醉月" href="https://lt12581.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="羽殇の醉月" href="https://lt12581.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="转载,基础知识,HTML" />
+
+
+<link rel="canonical" href="https://lt12581.github.io/posts/4132/">
+
+
+
+  <title>
+12-HTML基础回顾 - HTML知识 |
+Yume Shoka = 羽殇の醉月 = 羽殇の醉月</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">12-HTML基础回顾
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-04-21 10:30:58">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-04-21T10:30:58+08:00">2021-04-21</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/ChaiPersonalblog/blogImg/main/exploress.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/HTML%E7%9F%A5%E8%AF%86/" itemprop="item" rel="index" title="分类于 HTML知识"><span itemprop="name">HTML知识</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://lt12581.github.io/posts/4132/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="羽殇の醉月">
+    <meta itemprop="description" content="羽殇の醉月, 不是只会写业务代码的前端攻城狮！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="羽殇の醉月">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="本文主要内容"><a class="markdownIt-Anchor" href="#本文主要内容">#</a> 本文主要内容</h2>
+<ul>
+<li>
+<p>html 的常见元素</p>
+</li>
+<li>
+<p>html 元素的分类</p>
+</li>
+<li>
+<p>html 元素的嵌套关系</p>
+</li>
+<li>
+<p>html 元素的默认样式和 CSS Reset</p>
+</li>
+<li>
+<p>html 常见面试题</p>
+</li>
+</ul>
+<h2 id="html-的常见元素"><a class="markdownIt-Anchor" href="#html-的常见元素">#</a> html 的常见元素</h2>
+<p>html 的常见元素主要分为两类：head 区域的元素、body 区域的元素。下面来分别介绍。</p>
+<h3 id="1-head-区域的-html-元素"><a class="markdownIt-Anchor" href="#1-head-区域的-html-元素">#</a> 1、head 区域的 html 元素</h3>
+<blockquote>
+<p>head 区域的 html 元素，不会在页面上留下直接的内容。</p>
+</blockquote>
+<ul>
+<li>
+<p>meta</p>
+</li>
+<li>
+<p>title</p>
+</li>
+<li>
+<p>style</p>
+</li>
+<li>
+<p>link</p>
+</li>
+<li>
+<p>script</p>
+</li>
+<li>
+<p>base</p>
+</li>
+</ul>
+<p><strong>base 元素的介绍</strong>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>base 标签用于指定基础的路径。指定之后，所有的 a 链接都是以这个路径为基准。</p>
+<h3 id="2-html-元素body-区域"><a class="markdownIt-Anchor" href="#2-html-元素body-区域">#</a> 2、html 元素（body 区域）</h3>
+<blockquote>
+<p>body 区域的 html 元素，会直接出现在页面上。</p>
+</blockquote>
+<ul>
+<li>
+<p>div、section、article、aside、header、footer</p>
+</li>
+<li>
+<p>p</p>
+</li>
+<li>
+<p>span、em、strong</p>
+</li>
+<li>
+<p>表格元素：table、thead、tbody、tr、td</p>
+</li>
+<li>
+<p>列表元素：ul、ol、dl、dt、dd</p>
+</li>
+<li>
+<p>a</p>
+</li>
+<li>
+<p>表单元素：form、input、select、textarea、button</p>
+</li>
+</ul>
+<p>div 是最常见的元素，大多数场景下，都可以用 div（实在不行就多包几层 div）。可见，<strong>div 是比较通用的元素，这也决定了 div 的的语义并不是很明确</strong>。</p>
+<p><strong>常见标签的重要属性</strong>：</p>
+<ul>
+<li>a[href,target]</li>
+<li>img[src,alt]</li>
+<li>table td [colspan,rowspan]。设置当前单元格占据几行几列。在合并单元格时，会用到。</li>
+<li>form[target,method,enctype]</li>
+<li>input[type,value]</li>
+<li>button[type]</li>
+<li>selection&gt;option[value]</li>
+<li>label[for]</li>
+</ul>
+<h3 id="html-文档的大纲"><a class="markdownIt-Anchor" href="#html-文档的大纲">#</a> html 文档的大纲</h3>
+<p>我们平时在写论文或者其他文档的时候，一般会先列出大纲，然后再写具体的内容。</p>
+<p>同样，html 网页也可以看成是一种文档，也有属于它的大纲。</p>
+<p>一个常见的 html 文档，它的结构可以是：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>二级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>二级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>广告内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>某某公司出品<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="查看网页大纲的工具"><a class="markdownIt-Anchor" href="#查看网页大纲的工具">#</a> 查看网页大纲的工具</h3>
+<p>我们可以通过 <span class="exturl" data-url="aHR0cDovL2g1by5naXRodWIuaW8v">http://h5o.github.io/</span> 这个工具查看一个网页的大纲。</p>
+<p><strong>使用方法</strong>：</p>
+<p>（1）将网址 <span class="exturl" data-url="aHR0cDovL2g1by5naXRodWIuaW8v">http://h5o.github.io/</span> 保存到书签栏</p>
+<p>（2）去目标网页，点击书签栏的网址，即可查看该网页的大纲。</p>
+<p>这个工具非常好用，既可以查看网页的大纲，也可以查看 markdown 在线文档的结构。</p>
+<h2 id="html-元素的分类"><a class="markdownIt-Anchor" href="#html-元素的分类">#</a> html 元素的分类</h2>
+<p>按照样式分类：</p>
+<ul>
+<li>
+<p>块级元素</p>
+</li>
+<li>
+<p>行内元素</p>
+</li>
+<li>
+<p>inline-block：比如 <code>form</code>  表单元素。对外的表现是行内元素（不会独占一行），对内的表现是块级元素（可以设置宽高）。</p>
+</li>
+</ul>
+<p>按照内容分类：</p>
+<p><img data-src="http://img.smyhvae.com/20191003_1946.png" alt=""></p>
+<p>图片来源：<span class="exturl" data-url="aHR0cHM6Ly9odG1sLnNwZWMud2hhdHdnLm9yZy9tdWx0aXBhZ2UvZG9tLmh0bWwja2luZHMtb2YtY29udGVudA==">https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content</span></p>
+<h2 id="html-元素的嵌套关系"><a class="markdownIt-Anchor" href="#html-元素的嵌套关系">#</a> html 元素的嵌套关系</h2>
+<ul>
+<li>
+<p>块级元素可以包含行内元素。</p>
+</li>
+<li>
+<p>块级元素<strong>不一定</strong>能包含块级元素。比如 div 中可以包含 div，但 p 标签中不能包含 div。</p>
+</li>
+<li>
+<p>行内元素<strong>一般</strong>不能包含块级元素。比如 span 中不能包含 div。但有个特例：在 HTML5 中， a 标签中可以包含 div。</p>
+</li>
+</ul>
+<p><strong>注意</strong>：在 HTML5 中  <code>a &gt; div</code>  是合法的，  <code>div &gt; a &gt; div</code>  是不合法的 ；但是在 html 4.0.1 中，  <code>a &gt; div</code>  仍然是不合法的。</p>
+<h2 id="html-元素的默认样式和-css-reset"><a class="markdownIt-Anchor" href="#html-元素的默认样式和-css-reset">#</a> html 元素的默认样式和 CSS Reset</h2>
+<p>比如下拉框这种比较复杂的元素，是自带默认样式的。如果没有这个默认样式，则该元素在页面上不会有任何表现，则必然增加一些工作量。</p>
+<p>同时，默认样式也会带来一些问题：比如，有些默认样式我们是不需要的；有些默认样式甚至无法去掉。</p>
+<p>如果我们不需要默认的样式，这里就需要引入一个概念：<strong>CSS Reset</strong>。</p>
+<h3 id="常见的-css-reset-方案"><a class="markdownIt-Anchor" href="#常见的-css-reset-方案">#</a> 常见的 CSS Reset 方案</h3>
+<p><strong>方案一</strong>：</p>
+<p>CSS Tools: Reset CSS。链接：<span class="exturl" data-url="aHR0cHM6Ly9tZXllcndlYi5jb20vZXJpYy90b29scy9jc3MvcmVzZXQv">https://meyerweb.com/eric/tools/css/reset/</span></p>
+<p><strong>方案二</strong>：</p>
+<p>雅虎的 CSS Reset。链接：<span class="exturl" data-url="aHR0cHM6Ly95dWlsaWJyYXJ5LmNvbS95dWkvZG9jcy9jc3NyZXNldC8=">https://yuilibrary.com/yui/docs/cssreset/</span></p>
+<p>我们可以直接通过 CDN 的方式引入：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>方式三</strong>：（比较有争议）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面何种写法，比较简洁，但也有争议。有争议的地方在于，可能会导致 css 选择器的性能问题。</p>
+<h3 id="normalizecss"><a class="markdownIt-Anchor" href="#normalizecss">#</a> Normalize.css</h3>
+<p>上面的几种 css reset 的解决思路是：将所有的默认样式清零。</p>
+<p>但是，<span class="exturl" data-url="aHR0cHM6Ly9uZWNvbGFzLmdpdGh1Yi5pby9ub3JtYWxpemUuY3NzLw==">Normalize.css</span> 的思路是：既然浏览器提供了这些默认样式，那它就是有意义的。<strong>既然不同浏览器的默认样式不一致，那么， <code>Normalize.css</code>  就将这些默认样式设置为一致</strong>。</p>
+<h2 id="html-常见面试题"><a class="markdownIt-Anchor" href="#html-常见面试题">#</a> html 常见面试题</h2>
+<h3 id="doctype-的意义是什么"><a class="markdownIt-Anchor" href="#doctype-的意义是什么">#</a> doctype 的意义是什么</h3>
+<ul>
+<li>
+<p>让浏览器以标准模式渲染</p>
+</li>
+<li>
+<p>让浏览器知道元素的合法性</p>
+</li>
+</ul>
+<h3 id="html-xhtml-html5的区别"><a class="markdownIt-Anchor" href="#html-xhtml-html5的区别">#</a> HTML、XHTML、HTML5 的区别</h3>
+<ul>
+<li>
+<p>HTML 属于 SGML</p>
+</li>
+<li>
+<p>XHTML 属于 XML，是 HTML 进行 XML 严格化的结果</p>
+</li>
+<li>
+<p>HTML5 不属于 SGML，也不属于 XML（HTML5 有自己独立的一套规范），比 XHTML 宽松。</p>
+</li>
+</ul>
+<h3 id="html5-有什么新的变化"><a class="markdownIt-Anchor" href="#html5-有什么新的变化">#</a> HTML5 有什么新的变化</h3>
+<ul>
+<li>
+<p>新的语义化元素</p>
+</li>
+<li>
+<p>表单增强</p>
+</li>
+<li>
+<p>新的 API：离线、音视频、图形、实时通信、本地存储、设备能力等。</p>
+</li>
+</ul>
+<h3 id="em-和-i-的区别"><a class="markdownIt-Anchor" href="#em-和-i-的区别">#</a> em 和 i 的区别</h3>
+<p>共同点：二者都是表示斜体。</p>
+<p>区别：</p>
+<ul>
+<li>
+<p>em 是语义化的标签，表示强调。</p>
+</li>
+<li>
+<p>i 是纯样式的标签，表示斜体。HTML5 中不推荐使用。</p>
+</li>
+</ul>
+<h3 id="语义化的意义是什么"><a class="markdownIt-Anchor" href="#语义化的意义是什么">#</a> 语义化的意义是什么</h3>
+<ul>
+<li>
+<p>开发者容易理解，便于维护。</p>
+</li>
+<li>
+<p>机器（搜索引擎、读屏软件等）容易理解结构</p>
+</li>
+<li>
+<p>有助于 SEO</p>
+</li>
+</ul>
+<h3 id="哪些元素可以自闭和"><a class="markdownIt-Anchor" href="#哪些元素可以自闭和">#</a> 哪些元素可以自闭和</h3>
+<blockquote>
+<p>自闭和的元素中不能再嵌入别的元素。且 HTML5 中要求加斜杠。</p>
+</blockquote>
+<ul>
+<li>
+<p>表单元素 input</p>
+</li>
+<li>
+<p>图片 img</p>
+</li>
+<li>
+<p>br、hr</p>
+</li>
+<li>
+<p>meta、link</p>
+</li>
+</ul>
+<h3 id="form-表单的作用"><a class="markdownIt-Anchor" href="#form-表单的作用">#</a> form 表单的作用</h3>
+<ul>
+<li>
+<p>直接提交表单</p>
+</li>
+<li>
+<p>使用 submit /reset 按钮</p>
+</li>
+<li>
+<p>便于浏览器保存表单</p>
+</li>
+<li>
+<p>第三方库（比如 jQuery）可以整体获取值</p>
+</li>
+<li>
+<p>第三方库可以进行表单验证</p>
+</li>
+</ul>
+<p>所以，如果我们是通过 Ajax 提交表单数据，也建议加上 form。</p>
+
+      <div class="tags">
+          <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="ic i-tag"></i> 转载</a>
+          <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="ic i-tag"></i> 基础知识</a>
+          <a href="/tags/HTML/" rel="tag"><i class="ic i-tag"></i> HTML</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-04-20 15:11:14" itemprop="dateModified" datetime="2021-04-20T15:11:14+08:00">2021-04-20</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>羽殇の醉月 <i class="ic i-at"><em>@</em></i>羽殇の醉月
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://lt12581.github.io/posts/4132/" title="12-HTML基础回顾">https://lt12581.github.io/posts/4132/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/posts/3388/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;289586.jpg" title="11-HTML5详解（三）">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>11-HTML5详解（三）</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/posts/520520/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;HCLonely&#x2F;hclonely.github.io&#x2F;img&#x2F;Butterfly&#x2F;006.webp" title="Hello World">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> blog</span>
+  <h3>Hello World</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本文主要内容"><span class="toc-number">1.</span> <span class="toc-text"> 本文主要内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-的常见元素"><span class="toc-number">2.</span> <span class="toc-text"> html 的常见元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-head-区域的-html-元素"><span class="toc-number">2.1.</span> <span class="toc-text"> 1、head 区域的 html 元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-html-元素body-区域"><span class="toc-number">2.2.</span> <span class="toc-text"> 2、html 元素（body 区域）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html-文档的大纲"><span class="toc-number">2.3.</span> <span class="toc-text"> html 文档的大纲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看网页大纲的工具"><span class="toc-number">2.4.</span> <span class="toc-text"> 查看网页大纲的工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-元素的分类"><span class="toc-number">3.</span> <span class="toc-text"> html 元素的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-元素的嵌套关系"><span class="toc-number">4.</span> <span class="toc-text"> html 元素的嵌套关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-元素的默认样式和-css-reset"><span class="toc-number">5.</span> <span class="toc-text"> html 元素的默认样式和 CSS Reset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的-css-reset-方案"><span class="toc-number">5.1.</span> <span class="toc-text"> 常见的 CSS Reset 方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#normalizecss"><span class="toc-number">5.2.</span> <span class="toc-text"> Normalize.css</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-常见面试题"><span class="toc-number">6.</span> <span class="toc-text"> html 常见面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#doctype-的意义是什么"><span class="toc-number">6.1.</span> <span class="toc-text"> doctype 的意义是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html-xhtml-html5的区别"><span class="toc-number">6.2.</span> <span class="toc-text"> HTML、XHTML、HTML5 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html5-有什么新的变化"><span class="toc-number">6.3.</span> <span class="toc-text"> HTML5 有什么新的变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em-和-i-的区别"><span class="toc-number">6.4.</span> <span class="toc-text"> em 和 i 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义化的意义是什么"><span class="toc-number">6.5.</span> <span class="toc-text"> 语义化的意义是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哪些元素可以自闭和"><span class="toc-number">6.6.</span> <span class="toc-text"> 哪些元素可以自闭和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#form-表单的作用"><span class="toc-number">6.7.</span> <span class="toc-text"> form 表单的作用</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/posts/512457/" rel="bookmark" title="认识Web和Web标准">认识Web和Web标准</a></li><li><a href="/posts/12547/" rel="bookmark" title="浏览器的介绍">浏览器的介绍</a></li><li><a href="/posts/53954211/" rel="bookmark" title="初识HTML">初识HTML</a></li><li><a href="/posts/7054/" rel="bookmark" title="04-HTML标签：排版标签">04-HTML标签：排版标签</a></li><li><a href="/posts/38260/" rel="bookmark" title="05-HTML标签：字体标签和超链接">05-HTML标签：字体标签和超链接</a></li><li><a href="/posts/782/" rel="bookmark" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></li><li><a href="/posts/31785/" rel="bookmark" title="07-html标签图文详解（二）">07-html标签图文详解（二）</a></li><li><a href="/posts/8556/" rel="bookmark" title="08-HTML5详解">08-HTML5详解</a></li><li><a href="/posts/42620/" rel="bookmark" title="09-HTML5举例：简单的视频播放器">09-HTML5举例：简单的视频播放器</a></li><li><a href="/posts/52629/" rel="bookmark" title="10-HTML5详解（二）">10-HTML5详解（二）</a></li><li><a href="/posts/3388/" rel="bookmark" title="11-HTML5详解（三）">11-HTML5详解（三）</a></li><li class="active"><a href="/posts/4132/" rel="bookmark" title="12-HTML基础回顾">12-HTML基础回顾</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="羽殇の醉月"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">羽殇の醉月</p>
+  <div class="description" itemprop="description">不是只会写业务代码的前端攻城狮！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x0MTI1ODE=" title="https:&#x2F;&#x2F;github.com&#x2F;lt12581"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9saWFuZy10b25nLTEwLTQ=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;liang-tong-10-4"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTY5MzMwMTEx" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;69330111"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS81ODgxMTc4OTQ3" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5881178947"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/talk/" rel="section"><i class="ic i-feather"></i>微语</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/music/" rel="section"><i class="ic i-music"></i>音乐</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/posts/3388/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/posts/520520/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/3388/" title="11-HTML5详解（三）">11-HTML5详解（三）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/10161/" title="chrome浏览器">chrome浏览器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/53547/" title="Git的使用">Git的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/1860/" title="VS Code的使用积累">VS Code的使用积累</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/782/" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/59344/" title="GitHub的使用">GitHub的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/47531/" title="Mac安装和配置iTerm2">Mac安装和配置iTerm2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/42207/" title="whistle网络抓包">whistle网络抓包</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/26789/" title="VS Code的使用">VS Code的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/42620/" title="09-HTML5举例：简单的视频播放器">09-HTML5举例：简单的视频播放器</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">羽殇の醉月 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'posts/4132/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":120,"height":260},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

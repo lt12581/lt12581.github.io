@@ -1,0 +1,627 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="羽殇の醉月" href="https://lt12581.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="羽殇の醉月" href="https://lt12581.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="羽殇の醉月" href="https://lt12581.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="转载,前端工具" />
+
+
+<link rel="canonical" href="https://lt12581.github.io/posts/53547/">
+
+
+
+  <title>
+Git的使用 - 前端工具 |
+Yume Shoka = 羽殇の醉月 = 羽殇の醉月</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Git的使用
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-04-21 10:30:58">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-04-21T10:30:58+08:00">2021-04-21</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/ChaiPersonalblog/blogImg/main/git_logo.jfif">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" itemprop="item" rel="index" title="分类于 前端工具"><span itemprop="name">前端工具</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://lt12581.github.io/posts/53547/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="羽殇の醉月">
+    <meta itemprop="description" content="羽殇の醉月, 不是只会写业务代码的前端攻城狮！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="羽殇の醉月">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="常见操作"><a class="markdownIt-Anchor" href="#常见操作">#</a> 常见操作</h2>
+<h3 id="全局配置用户信息"><a class="markdownIt-Anchor" href="#全局配置用户信息">#</a> 全局配置用户信息</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;smyhvae&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.email &quot;smyhvae@163.com&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="分支的合并"><a class="markdownIt-Anchor" href="#分支的合并">#</a> 分支的合并</h2>
+<h3 id="场景基于master分支的代码开发一个新的特性"><a class="markdownIt-Anchor" href="#场景基于master分支的代码开发一个新的特性">#</a> 场景：基于 master 分支的代码，开发一个新的特性</h3>
+<p>如果你直接在 master 分支上开发这个新特性，是不好的，万一你在开发 <code>特性1</code>  的时候，领导突然又要叫你去开发 <code>特性2</code> ，就不好处理了。难道开发的两个特性都提交到 master？一会儿提交特性 1 的 commit，一会儿提交特性 2 的 commit？这会导致 commit 记录很混乱。</p>
+<p>所以，我给你的建议做法是：给每个特性都单独建一个的新的分支。</p>
+<p>比如说，我专门给 <code>特性1</code>  建一个分支 <code>feature_item_recommend</code> 。具体做法如下：</p>
+<p>（1）基于 master 分支，创建一个新的分支，起名为 <code>feature_item_recommend</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b feature_item_recommend</span><br><span class="line"></span><br><span class="line">Switched to a new branch &#39;feature_item_recommend&#39;</span><br></pre></td></tr></table></figure>
+<p>上面这行命令，相当于：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch feature_item_recommend    // 创建新的分支</span><br><span class="line"></span><br><span class="line">$ git checkout feature_item_recommend  //切换到新的分支</span><br></pre></td></tr></table></figure>
+<p>（2）在新的分支 <code>feature_item_recommend</code>  上，完成开发工作，并 commit 、push。</p>
+<p>（3）将分支 <code>feature_item_recommend</code>  上的开发进度<strong>合并</strong>到 master 分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master  //切换到master分支</span><br><span class="line"></span><br><span class="line">$ git merge feature_item_recommend    //将分支 feature_item_recommend 的开发进度合并到 master 分支</span><br></pre></td></tr></table></figure>
+<p>合并之后， <code>master</code>  分支和 <code>feature_item_recommend</code>  分支会指向同一个位置。</p>
+<p>（3）删除分支 <code>feature_item_recommend</code> ：</p>
+<blockquote>
+<p>既然 特性 1 开发完了，也放心地提交到 master 了，那我们就可以将这个分支删除了。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d feature_item_recommend</span><br></pre></td></tr></table></figure>
+<p>注意，我们当前是处于 <code>master</code>  分支的位置，来删除 <code>feature_item_recommend</code>  分支。如果当前是处于 <code>feature_item_recommend</code>  分支，是没办法删除它自己的。</p>
+<p>同理，当我转身去开发 <code>特性2</code>  的时候，也是采用同样的步骤。</p>
+<h3 id="合并分支时如果存在分叉"><a class="markdownIt-Anchor" href="#合并分支时如果存在分叉">#</a> 合并分支时，如果存在分叉</h3>
+<p><img data-src="http://img.smyhvae.com/20180610_1650.png" alt=""></p>
+<p>比如说上面这张图中，最早的时候，master 分支是位于 <code>C2</code>  节点。我基于 <code>C2</code>  节点，new 出一个新的分支 <code>iss53</code> ，我在 <code>iss53</code>  上提交了好几个 commit。</p>
+<p>现在，我准备把 <code>iss53</code>  上的几个 commit 合并到 master 上，此时发现，master 分支已经前进到 C4 了。那该怎么合并呢？</p>
+<p>合并的命令仍然是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line"></span><br><span class="line">$ git merge iss53</span><br></pre></td></tr></table></figure>
+<p><strong>解释</strong>：</p>
+<p>这次合并的实现，并不同于简单的并入方式。这一次，我的开发历史是从更早的地方开始分叉的。</p>
+<p>由于当前 master 分支所指向的 commit (C4) 并非想要并入分支（iss53）的直接祖先，Git 不得不进行一些处理。就此例而言，Git 会用两个分支的末端（C4 和 C5）和它们的共同祖先（C2）进行一次简单的三方合并计算。</p>
+<p>Git 没有简单地把分支指针右移，而是对三方合并的结果作一新的快照，并自动创建一个指向它的 commit（C6）（如下图所示）。我们把这个特殊的 commit 称作合并提交（mergecommit），因为它的祖先不止一个。</p>
+<p>值得一提的是 Git 可以自己裁决哪个共同祖先才是最佳合并基础；这和 CVS 或 Subversion（1.5 以后的版本）不同，它们需要开发者手工指定合并基础。所以此特性让 Git 的合并操作比其他系统都要简单不少。</p>
+<p><img data-src="http://img.smyhvae.com/20180610_1710.png" alt=""></p>
+<h3 id="解决合并时发生的冲突"><a class="markdownIt-Anchor" href="#解决合并时发生的冲突">#</a> 解决合并时发生的冲突</h3>
+<p><img data-src="http://img.smyhvae.com/20180610_1740.png" alt=""></p>
+<p>如果 feature1 和 feature2 修改的是同一个文件中<strong>代码的同一个位置</strong>，那么，把 feature1 合并到 feature2 时，就会产生冲突。这个冲突需要人工解决。步骤如下：</p>
+<p>（1）手动修改文件：手动修改冲突的那个文件，决定到底要用哪个分支的代码。</p>
+<p>（2）git add：解决好冲突后，输入 <code>git status</code> ，会提示 <code>Unmerged paths</code> 。这个时候，输入 <code>git add</code>  即可，表示：<strong>修改冲突成功，加入暂存区</strong>。</p>
+<p>（3）git commit 提交。</p>
+<p>然后，我们可以继续把 feature1 分支合并到 master 分支，最后删除 feature1、feature2。</p>
+<p><strong>注意</strong>：两个分支的同一个文件的不同地方合并时，git 会自动合并，不会产生冲突。</p>
+<p>比如分支 feture1 对 index.html 原来的第二行之前加入了一段代码。<br>
+分支 feature2 对 index.html 在原来的最后一行的后面加入了一段代码。<br>
+这个时候在对两个分支合并，git 不会产生冲突，因为两个分支是修改同一文件的不同位置。<br>
+git 自动合并成功。不管是 git 自动合并成功，还是在人工解决冲突下合并成功，提交之前，都要对代码进行测试。</p>
+<h2 id="日常操作积累"><a class="markdownIt-Anchor" href="#日常操作积累">#</a> 日常操作积累</h2>
+<h3 id="修改密码曲线救国"><a class="markdownIt-Anchor" href="#修改密码曲线救国">#</a> 修改密码（曲线救国）</h3>
+<blockquote>
+<p>网上查了很久，没找到答案。最终，在 cld 童鞋的提示下，采取如下方式进行曲线救国。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置当前仓库的用户名为空</span></span><br><span class="line">git config  user.name <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>然后，当我们再输入 <code>git pull</code>  等命令行时，就会被要求重新输入<em>新的</em>账号密码。此时，密码就可以修改成功了。最后，我们还要输入如下命令，还原当前仓库的用户名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;smyhvae&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="修改已经push的某次commit的作者信息"><a class="markdownIt-Anchor" href="#修改已经push的某次commit的作者信息">#</a> 修改已经 push 的某次 commit 的作者信息</h3>
+<p>已经 push 的记录，如果要修改作者信息的话，只能 通过–force 命令。我反正是查了很久，但最终还是不敢用公司的仓库尝试。</p>
+<p>参考链接：</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL3EvMTAxMDAwMDAwNjk5OTg2MQ==">git 修改已提交的某一次的邮箱和用户信息</span></li>
+</ul>
+<p>看最后一条答案。</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovL2JhdXJpbmUuZ2l0aHViLmlvLzIwMTUvMDgvMjIvZ2l0X3VwZGF0ZV9hdXRob3IuaHRtbA==">修改 git repo 历史提交的 author</span></li>
+</ul>
+<h3 id="将-branch1的某个commit1合并到branch2当中"><a class="markdownIt-Anchor" href="#将-branch1的某个commit1合并到branch2当中">#</a> 将  <code>branch1</code>  的某个 <code>commit1</code>  合并到 <code>branch2</code>  当中</h3>
+<p>切换到 branch2 中，然后执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick commit1</span><br></pre></td></tr></table></figure>
+<h3 id="20190118-修改github已提交的用户名和邮箱"><a class="markdownIt-Anchor" href="#20190118-修改github已提交的用户名和邮箱">#</a> 20190118 - 修改 GitHub 已提交的用户名和邮箱</h3>
+<p>参考链接：（亲测有效）</p>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xMzUyNjIz">修改 Git 全部 Commit 提交记录的用户名 Name 和邮箱 Email</span></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l1c3Vmb2x1OS9hcnRpY2xlL2RldGFpbHMvNTM3MDYyNjk=">Mac 运行 sh 文件，也就是传说中的 shell 脚本</span></p>
+</li>
+</ul>
+<p>在执行 <code>./email.sh</code>  后，如果出现 <code>permission denied</code>  的错误，可以先执行 <code>chmod 777 email.sh</code> ，修改文件的权限。</p>
+<h3 id="20200520-将git-项目迁移到另一个仓库"><a class="markdownIt-Anchor" href="#20200520-将git-项目迁移到另一个仓库">#</a> 20200520 - 将 Git 项目迁移到另一个仓库</h3>
+<p>我们假设旧仓库的项目名称叫 <code>old-repository</code> ，新仓库的项目名称叫 <code>new-repository</code> 。操作如下：</p>
+<p>（1）创建旧仓库的裸克隆：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --bare https://github.com/exampleuser/old-repository.git</span><br></pre></td></tr></table></figure>
+<p>执行上述命令后，会在本地生成一个名叫  <code>old-repository.git</code>  的文件夹。</p>
+<p>（2）迁移到新仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> old-repository.git</span><br><span class="line"></span><br><span class="line">git push --mirror https://github.com/exampleuser/new-repository.git</span><br></pre></td></tr></table></figure>
+<p>这样的话，项目就已经迁移到新仓库了。</p>
+<p>注意，我们<strong>不需要</strong>手动新建一个空的新仓库，当我们执行上述命令之后，新仓库就已经自动创建好了。</p>
+<p>参考链接：</p>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9oZWxwLmdpdGh1Yi5jb20vY24vZ2l0aHViL2NyZWF0aW5nLWNsb25pbmctYW5kLWFyY2hpdmluZy1yZXBvc2l0b3JpZXMvZHVwbGljYXRpbmctYS1yZXBvc2l0b3J5">复制仓库</span></p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tb2Vsb3ZlLmluZm8vMjAxNi8xMi8wNC9HaXQtJUU2JTlDJUFDJUU1JTlDJUIwJUU0JUJCJTkzJUU1JUJBJTkzJUU1JTkyJThDJUU4JUEzJUI4JUU0JUJCJTkzJUU1JUJBJTkzLw==">Git 本地仓库和裸仓库</span></p>
+</li>
+</ul>
+<h2 id="git客户端推荐"><a class="markdownIt-Anchor" href="#git客户端推荐">#</a> git 客户端推荐</h2>
+<p>市面上的 Git 客户端我基本都用过了，我最推荐的一款 Git 客户端是：<span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2l0LXRvd2VyLmNvbQ==">Tower</span> 或者 <span class="exturl" data-url="aHR0cHM6Ly9naXQtZm9yay5jb20=">Fork</span>。</p>
+<ul>
+<li>GitUp：<span class="exturl" data-url="aHR0cHM6Ly9naXR1cC5jby8=">https://gitup.co/</span></li>
+</ul>
+<p>20180623 时，网上看了下 Git 客户端的推荐排名：</p>
+<p><img data-src="http://img.smyhvae.com/20180623_1210.png" alt=""></p>
+<p><strong>SmartGit</strong>：</p>
+<p>商业用途收费， 个人用户免费：</p>
+<p><img data-src="http://img.smyhvae.com/20180623_1305.png" alt=""></p>
+<h2 id="推荐书籍"><a class="markdownIt-Anchor" href="#推荐书籍">#</a> 推荐书籍</h2>
+<ul>
+<li>《pro.git 中文版》</li>
+</ul>
+<h2 id="推荐连接"><a class="markdownIt-Anchor" href="#推荐连接">#</a> 推荐连接</h2>
+<h3 id="2018-06"><a class="markdownIt-Anchor" href="#2018-06">#</a> 2018-06</h3>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ2lxbmdwZWk1NTcvcC82MDU2NjI0Lmh0bWw=">聊下 git pull --rebase</span></li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="ic i-tag"></i> 转载</a>
+          <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> 前端工具</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-04-20 09:06:47" itemprop="dateModified" datetime="2021-04-20T09:06:47+08:00">2021-04-20</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>羽殇の醉月 <i class="ic i-at"><em>@</em></i>羽殇の醉月
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://lt12581.github.io/posts/53547/" title="Git的使用">https://lt12581.github.io/posts/53547/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/posts/512457/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;Webbiaoz.png" title="认识Web和Web标准">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>认识Web和Web标准</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/posts/12547/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ChaiPersonalblog&#x2F;blogImg&#x2F;main&#x2F;llqimg.jpg" title="浏览器的介绍">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML知识</span>
+  <h3>浏览器的介绍</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见操作"><span class="toc-number">1.</span> <span class="toc-text"> 常见操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局配置用户信息"><span class="toc-number">1.1.</span> <span class="toc-text"> 全局配置用户信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支的合并"><span class="toc-number">2.</span> <span class="toc-text"> 分支的合并</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景基于master分支的代码开发一个新的特性"><span class="toc-number">2.1.</span> <span class="toc-text"> 场景：基于 master 分支的代码，开发一个新的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并分支时如果存在分叉"><span class="toc-number">2.2.</span> <span class="toc-text"> 合并分支时，如果存在分叉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决合并时发生的冲突"><span class="toc-number">2.3.</span> <span class="toc-text"> 解决合并时发生的冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日常操作积累"><span class="toc-number">3.</span> <span class="toc-text"> 日常操作积累</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改密码曲线救国"><span class="toc-number">3.1.</span> <span class="toc-text"> 修改密码（曲线救国）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改已经push的某次commit的作者信息"><span class="toc-number">3.2.</span> <span class="toc-text"> 修改已经 push 的某次 commit 的作者信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将-branch1的某个commit1合并到branch2当中"><span class="toc-number">3.3.</span> <span class="toc-text"> 将  branch1  的某个 commit1  合并到 branch2  当中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20190118-修改github已提交的用户名和邮箱"><span class="toc-number">3.4.</span> <span class="toc-text"> 20190118 - 修改 GitHub 已提交的用户名和邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20200520-将git-项目迁移到另一个仓库"><span class="toc-number">3.5.</span> <span class="toc-text"> 20200520 - 将 Git 项目迁移到另一个仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git客户端推荐"><span class="toc-number">4.</span> <span class="toc-text"> git 客户端推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐书籍"><span class="toc-number">5.</span> <span class="toc-text"> 推荐书籍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐连接"><span class="toc-number">6.</span> <span class="toc-text"> 推荐连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2018-06"><span class="toc-number">6.1.</span> <span class="toc-text"> 2018-06</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/posts/26789/" rel="bookmark" title="VS Code的使用">VS Code的使用</a></li><li class="active"><a href="/posts/53547/" rel="bookmark" title="Git的使用">Git的使用</a></li><li><a href="/posts/47531/" rel="bookmark" title="Mac安装和配置iTerm2">Mac安装和配置iTerm2</a></li><li><a href="/posts/1860/" rel="bookmark" title="VS Code的使用积累">VS Code的使用积累</a></li><li><a href="/posts/5251/" rel="bookmark" title="WebStorm的使用">WebStorm的使用</a></li><li><a href="/posts/59344/" rel="bookmark" title="GitHub的使用">GitHub的使用</a></li><li><a href="/posts/10161/" rel="bookmark" title="chrome浏览器">chrome浏览器</a></li><li><a href="/posts/42207/" rel="bookmark" title="whistle网络抓包">whistle网络抓包</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="羽殇の醉月"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">羽殇の醉月</p>
+  <div class="description" itemprop="description">不是只会写业务代码的前端攻城狮！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2x0MTI1ODE=" title="https:&#x2F;&#x2F;github.com&#x2F;lt12581"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9saWFuZy10b25nLTEwLTQ=" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;liang-tong-10-4"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTY5MzMwMTEx" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;69330111"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS81ODgxMTc4OTQ3" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5881178947"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/talk/" rel="section"><i class="ic i-feather"></i>微语</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/music/" rel="section"><i class="ic i-music"></i>音乐</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/posts/512457/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/posts/12547/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/5251/" title="WebStorm的使用">WebStorm的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分类于 blog">blog</a>
+</div>
+
+    <span><a href="/posts/520520/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/42620/" title="09-HTML5举例：简单的视频播放器">09-HTML5举例：简单的视频播放器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/1860/" title="VS Code的使用积累">VS Code的使用积累</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/512457/" title="认识Web和Web标准">认识Web和Web标准</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/782/" title="06-HTML标签：图片标签">06-HTML标签：图片标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/47531/" title="Mac安装和配置iTerm2">Mac安装和配置iTerm2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML%E7%9F%A5%E8%AF%86/" title="分类于 HTML知识">HTML知识</a>
+</div>
+
+    <span><a href="/posts/8556/" title="08-HTML5详解">08-HTML5详解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/42207/" title="whistle网络抓包">whistle网络抓包</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" title="分类于 前端工具">前端工具</a>
+</div>
+
+    <span><a href="/posts/53547/" title="Git的使用">Git的使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">羽殇の醉月 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'posts/53547/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":120,"height":260},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
